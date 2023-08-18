@@ -31,7 +31,7 @@ const server = app.listen(process.env.PORT, () =>
 );
 const io = socket(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: ["http://localhost:3000", "https://chat-client-6tza.onrender.com"],
     credentials: true,
   },
 });
@@ -48,6 +48,6 @@ io.on("connection", (socket) => {
     const sendUserSocket = onlineUsers.get(data.to);
     if (sendUserSocket) {
       socket.to(sendUserSocket).emit("msg-receive", data.message);
-    } 
+    }
   });
 });
