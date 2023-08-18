@@ -33,6 +33,7 @@ const io = socket(server, {
   cors: {
     origin: ["http://localhost:3000", "https://chat-client-6tza.onrender.com"],
     credentials: true,
+    allowedHeaders: "Content-Type, Authorization", // 允許的請求標頭
   },
 });
 
