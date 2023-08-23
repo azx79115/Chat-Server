@@ -10,7 +10,7 @@ const messageController = {
         sender: from,
       });
       if (data) return res.json({ msg: "Message added successfully." });
-      return res.json({ msg: "Failed to add message to the database." });
+      else return res.json({ msg: "Failed to add message to the database." });
     } catch (err) {
       next(err);
     }
